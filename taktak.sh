@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Funkcja rysująca szachownicę
 rysuj_szachownice() {
     rozmiar=$1
     for ((i=0; i<rozmiar; i++)); do
