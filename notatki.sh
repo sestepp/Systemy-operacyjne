@@ -7,6 +7,8 @@ licznik=0
 poprawne=0
 falszywe=0
 
+start=$(date +%s)
+
 while [ $odp -gt 0 ]; do
     x=$((1 + RANDOM % $zakres_x))
     y=$((1 + RANDOM % $zakres_y))
@@ -23,7 +25,11 @@ while [ $odp -gt 0 ]; do
     fi
 done
 
+koniec=$(date +%s)
+czas=$(echo "$koniec - $start" | bc)
+
 echo "Statystyki"
 echo "Liczba gier: $licznik"
 echo "Poprawne: $poprawne"
 echo "Fałszywe: $falszywe"
+echo "Czas: $czas s"
